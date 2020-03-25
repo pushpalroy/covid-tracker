@@ -17,8 +17,8 @@ android {
       isMinifyEnabled = true
       isShrinkResources = true
       proguardFiles(
-              getDefaultProguardFile(Versions.proguard_android), Versions.proguard_common,
-              Versions.proguard_specific
+          getDefaultProguardFile(Versions.proguard_android), Versions.proguard_common,
+          Versions.proguard_specific
       )
       buildConfigField("boolean", "ENABLE_LOGGING", "false")
     }
@@ -48,6 +48,10 @@ android {
   compileOptions {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
+  }
+
+  kotlinOptions {
+    jvmTarget = "1.8"
   }
 
   sourceSets["test"].java.srcDir("src/test-common/java")

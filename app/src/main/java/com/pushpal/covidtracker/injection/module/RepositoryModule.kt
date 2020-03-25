@@ -5,10 +5,12 @@ import com.pushpal.covidtracker.BuildConfig
 import com.pushpal.covidtracker.model.AppRepository
 import com.pushpal.covidtracker.model.network.NetworkDataProvider
 import com.pushpal.covidtracker.model.network.api.CovidApi
+import com.pushpal.covidtracker.utils.API_KEY
 import com.pushpal.covidtracker.utils.BASE_URL
 import com.pushpal.covidtracker.utils.SharedPrefUtils
 import dagger.Module
 import dagger.Provides
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -50,8 +52,9 @@ class RepositoryModule {
 
   @Provides
   @Singleton
-  fun provideOkHttpClient(): OkHttpClient {
+  fun provideOkHttpClient(headerInterceptor: Interceptor): OkHttpClient {
     val httpBuilder = OkHttpClient.Builder()
+        .addInterceptor(headerInterceptor)
     when {
       BuildConfig.DEBUG -> {
         val httpLoggingInterceptor = HttpLoggingInterceptor()
@@ -61,6 +64,21 @@ class RepositoryModule {
       }
     }
     return httpBuilder.build()
+  }
+
+  @Provides
+  @Singleton
+  fun getHeaderInterceptor(): Interceptor {
+    return Interceptor { chain ->
+      val request =
+        chain.request()
+            .newBuilder()
+            .addHeader("x-rapidapi-host", "coronavirus-monitor.p.rapidapi.com")
+            .addHeader("x-rapidapi-key", API_KEY)
+
+      val actualRequest = request.build()
+      chain.proceed(actualRequest)
+    }
   }
 
   private fun getRetrofit(okHttpClient: OkHttpClient): Retrofit {

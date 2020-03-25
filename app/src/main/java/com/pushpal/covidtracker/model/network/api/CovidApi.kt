@@ -1,11 +1,11 @@
 package com.pushpal.covidtracker.model.network.api
 
+import com.pushpal.covidtracker.model.network.models.WorldStat
 import retrofit2.Response
 import retrofit2.http.GET
-import java.util.Objects
 
 interface CovidApi {
 
-  @GET("/covid")
-  suspend fun getUserInformation(): Response<Objects>
+  @GET("/coronavirus/worldstat.php")
+  suspend fun getWorldStat(): Response<WorldStat>
 }

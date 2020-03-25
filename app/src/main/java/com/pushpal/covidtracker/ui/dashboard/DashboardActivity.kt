@@ -11,5 +11,7 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewMo
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+
+    viewModel.getWorldStat()
   }
 }
