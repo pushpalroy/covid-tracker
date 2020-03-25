@@ -1,1 +1,0 @@
-/Users/pushpalroy/AndroidStudioProjects/CovidTracker/buildSrc/build/classes/kotlin/main/Dependencies.class:/Users/pushpalroy/AndroidStudioProjects/CovidTracker/buildSrc/build/classes/kotlin/main/Versions.class
