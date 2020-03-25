@@ -1,3 +1,7 @@
 <resources>
   <string name="app_name">CovidTracker</string>
+  <string name="stats">Stats</string>
+  <string name="tips">Tips</string>
+  <string name="graphs">Graphs</string>
+  <string name="random_instruction">Random instruction</string>
 </resources>

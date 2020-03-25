@@ -1,4 +1,4 @@
-package com.pushpal.covidtracker.ui.base
+package com.pushpal.covidtracker.utils
 
 import android.app.Activity
 import android.content.Intent
@@ -25,7 +25,9 @@ object AppNavigator {
     }
     activity.startActivity(intent)
     if (finishAfter) {
-      finishActivityWithAnimation(activity = activity)
+      finishActivityWithAnimation(
+          activity = activity
+      )
     }
     if (!withoutAnimation) {
       activity.overridePendingTransition(0, 0)
@@ -84,12 +86,14 @@ object AppNavigator {
     containerId: Int,
     fragment: Fragment,
     activity: AppCompatActivity,
-    addToBackStack: Boolean = false
+    addToBackStack: Boolean? = false
   ) {
     var transaction = activity.supportFragmentManager.beginTransaction()
         .replace(containerId, fragment, fragment.javaClass.name)
-    if (addToBackStack) {
-      transaction = transaction.addToBackStack(fragment.javaClass.name)
+    addToBackStack?.let {
+      if (addToBackStack) {
+        transaction = transaction.addToBackStack(fragment.javaClass.name)
+      }
     }
     transaction.commit()
   }

@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import com.pushpal.covidtracker.BR
 import dagger.android.support.DaggerFragment
+import javax.inject.Inject
 
 abstract class BaseFragment<B : ViewDataBinding, VM : BaseViewModel> : DaggerFragment() {
 
@@ -18,11 +19,12 @@ abstract class BaseFragment<B : ViewDataBinding, VM : BaseViewModel> : DaggerFra
 
   abstract fun getViewModelClass(): Class<VM>
   abstract fun getLayoutId(): Int
-  abstract fun getViewModelFactoryInstance(): ViewModelProvider.Factory
+
+  @Inject lateinit var viewModelFactory: ViewModelProvider.Factory
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    viewModel = ViewModelProvider(this).get(getViewModelClass())
+    viewModel = ViewModelProvider(this, viewModelFactory).get(getViewModelClass())
   }
 
   override fun onCreateView(

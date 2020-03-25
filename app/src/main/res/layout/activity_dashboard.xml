@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
 
   <data>
 
@@ -8,10 +10,31 @@
         type="com.pushpal.covidtracker.ui.dashboard.DashboardViewModel"
         />
   </data>
-  <androidx.constraintlayout.widget.ConstraintLayout
+
+  <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:tools="http://schemas.android.com/tools"
+      android:id="@+id/container"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
+      tools:context=".ui.dashboard.DashboardActivity"
       >
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        style="@style/Widget.Design.BottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/colorPrimary"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/bottom_nav_menu"
+        />
+
+  </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
