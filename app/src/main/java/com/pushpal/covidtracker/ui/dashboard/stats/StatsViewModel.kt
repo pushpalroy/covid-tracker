@@ -32,7 +32,7 @@ class StatsViewModel @Inject constructor(
               _liveTotalDeaths.value = worldStat.totalDeaths
               _liveTotalRecovered.value = worldStat.totalRecovered
               _liveNewCases.value = worldStat.newCases
-              _liveTotalDeaths.value = worldStat.newDeaths
+              _liveNewDeaths.value = worldStat.newDeaths
             }
           }
           response.second?.let {

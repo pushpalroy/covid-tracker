@@ -4,7 +4,10 @@
   <string name="tips">Tips</string>
   <string name="graphs">Graphs</string>
   <string name="random_instruction">Random instruction</string>
-    <string name="total_cases">Total Cases</string>
+  <string name="total_cases">Total Cases</string>
   <string name="total_deaths">Total Deaths</string>
   <string name="total_recovered">Total Recovered</string>
+  <string name="new_cases">New Cases</string>
+  <string name="new_data_custom">+%1$s</string>
+  <string name="new_deaths">New Deaths</string>
 </resources>

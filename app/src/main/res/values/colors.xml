@@ -6,7 +6,10 @@
 
   <color name="white">#FFFFFF</color>
   <color name="text_grey">#333333</color>
+  <color name="text_grey_light">#6C6C6C</color>
   <color name="grey">#7a7a7a</color>
   <color name="red">#ee4f62</color>
+  <color name="red_light">#E87F8C</color>
   <color name="green">#9cd167</color>
+  <color name="green_dark">#689F38</color>
 </resources>

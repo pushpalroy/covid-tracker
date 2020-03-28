@@ -7,37 +7,86 @@
         name="totalDeaths"
         type="String"
         />
+    <variable
+        name="newDeaths"
+        type="String"
+        />
   </data>
   <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
-      android:layout_height="match_parent"
+      android:layout_height="wrap_content"
       android:padding="@dimen/dp_16"
       >
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView"
+        android:layout_width="90dp"
+        android:layout_height="0dp"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_death"
+        />
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_total_deaths_label"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:text="@string/total_deaths"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="@color/text_grey"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/appCompatImageView"
+        app:layout_constraintTop_toTopOf="@+id/appCompatImageView"
         />
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_total_deaths"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/dp_16"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:text="@={totalDeaths}"
         android:textColor="@color/red"
-        android:textSize="40sp"
+        android:textSize="50sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_total_deaths_label"
         app:layout_constraintTop_toBottomOf="@+id/tv_total_deaths_label"
-        tools:text="28,376"
+        tools:text="30,446"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_new_deaths_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:drawableStart="@drawable/ic_new_deaths"
+        android:gravity="center_vertical"
+        android:text="@string/new_deaths"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/text_grey_light"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_total_deaths"
+        app:layout_constraintTop_toBottomOf="@+id/tv_total_deaths"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_new_deaths"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        android:gravity="center_vertical"
+        android:text="@{String.format(@string/new_data_custom, newDeaths)}"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/red_light"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_new_deaths_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_new_deaths_label"
+        app:layout_constraintTop_toTopOf="@+id/tv_new_deaths_label"
+        tools:text="+3,104"
         />
   </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
