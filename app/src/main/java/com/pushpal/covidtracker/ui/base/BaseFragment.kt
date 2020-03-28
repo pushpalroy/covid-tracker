@@ -34,6 +34,7 @@ abstract class BaseFragment<B : ViewDataBinding, VM : BaseViewModel> : DaggerFra
   ): View? {
     binding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false)
     binding.setVariable(BR.viewModel, viewModel)
+    binding.lifecycleOwner = this
     return binding.root
   }
 

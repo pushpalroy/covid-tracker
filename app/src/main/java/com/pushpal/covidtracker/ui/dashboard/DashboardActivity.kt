@@ -20,14 +20,13 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewMo
     super.onCreate(savedInstanceState)
 
     initUi()
-    //viewModel.getWorldStat()
-
   }
 
   private fun initUi() {
     binding.bottomNav.setOnNavigationItemSelectedListener(this)
     val layoutParams: LayoutParams = binding.bottomNav.layoutParams as LayoutParams
     layoutParams.behavior = BottomNavigationBehavior()
+    binding.bottomNav.selectedItemId = R.id.nav_stats
   }
 
   override fun onNavigationItemSelected(item: MenuItem): Boolean {

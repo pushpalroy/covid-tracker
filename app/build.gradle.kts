@@ -67,6 +67,7 @@ dependencies {
   implementation(Dependencies.support_appcompat)
   implementation(Dependencies.support_design)
   implementation(Dependencies.constraint_layout)
+  implementation(Dependencies.swipe_refresh_layout)
 
   implementation(Dependencies.kotlin_stdlib)
 

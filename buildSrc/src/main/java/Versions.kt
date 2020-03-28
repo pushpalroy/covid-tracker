@@ -22,6 +22,7 @@ object Versions {
   const val junit = "4.12"
   const val appCompat = "1.1.0"
   const val constraint = "1.1.3"
+  const val swipeRefreshLayout = "1.0.0"
   const val material = "1.1.0"
   const val kotlin = "1.3.50"
   const val activityVersion = "1.1.0"

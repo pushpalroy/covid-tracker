@@ -5,6 +5,7 @@ object Dependencies {
   val support_appcompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
   val support_design = "com.google.android.material:material:${Versions.material}"
   val constraint_layout = "androidx.constraintlayout:constraintlayout:${Versions.constraint}"
+  val swipe_refresh_layout = "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swipeRefreshLayout}"
 
   val lifecycle_extensions = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycleVersion}"
   val lifecycle_view_model = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleVersion}"
